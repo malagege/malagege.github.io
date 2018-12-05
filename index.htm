@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Huang Ze-YI</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet"> 
+    <style>
+    * {
+        /* border: 1px solid black !important;  */
+    }
+
+@keyframes slideOutUp {
+  from {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+    #menu,#menu_view{
+        display:none;
+    }
+
+    nav,#menu_view{
+        animation-name: slideOutUp;
+        animation-duration: 1s;
+    }
+
+    .container *{
+        animation-name: fadeIn;
+        animation-delay: 1s;
+        animation-duration: 2s;
+        animation-fill-mode: backwards;
+    }
+
+    nav a:link {
+        color: white;
+        text-decoration: none;
+    }
+
+    nav a:visited {
+        color: white;
+    }
+
+
+    nav a:hover {
+        color: white;
+    }
+
+    nav a:active {
+        color: white;
+    } 
+    body{
+        font-family: 'Lato', sans-serif,'微軟正黑體';
+        color:gray;
+        overflow-x: hidden;
+        background: #FFB336;
+    }
+    #me{
+        background: #FFB336;
+    }
+    .me_img{
+        height: 300px;
+        /* opacity: 0; */
+        animation-name: fadeIn;
+        animation-duration: 2s;
+        animation-delay: 1s;
+        animation-fill-mode: backwards;
+    }
+    nav ol{
+        background: #707070;
+        color: white;
+        font-weight: 800;
+        display: flex;
+        justify-content: flex-end;
+    }
+    nav ol li{
+        padding: 20px 20px;
+    }
+    .container{
+        padding: 50px 100px;
+        min-height: 60vh;
+    }
+    .myName{
+        font-size: 48px;
+        text-align: center
+    }
+    .container h2{
+        font-size: 36px;
+        text-align: center;
+        padding: 20px 0px 40px 0px;
+    }
+    #skill{
+        /* padding: 0px 200px; */
+        /* text-align: justify */
+        background: #F3F7F7;
+    }
+    .skill_box{
+        width: 40%;
+        display: inline-block;
+        vertical-align:text-top;
+        padding: 20px 15px;
+        font-size: initial;
+        margin-bottom: 30px;
+        border: 1px solid;
+        border-color: #707070;
+        background: white;
+        box-shadow: 0px 0px 3px rgba(220,220,220, 1);
+        border-radius: 5px;
+        /* background: url(attr(data-img)) */
+    }
+    .skill_img{
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        vertical-align: middle;
+    }
+    .skill_box::before{
+        height: 100%;
+        display: inline-block;
+        content: '';
+        vertical-align: middle;
+        /* border: 1px solid black; */
+    }
+    .skill_img .skill_title{
+        font-size: 10px;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        background: #F3F7F7;
+        opacity: .9;
+        border: 0px;
+        color: black;
+    }
+    .skill_message{
+        display: inline-block;
+        width: 70%;
+        vertical-align: middle;
+        padding-top: 5px;
+        padding-left: 15px;
+        /* font-size: 14px; */
+    }
+    .wrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        font-size: 0px;
+    }
+    #project{
+        background: #F3F7F7;
+    }
+    .project_box_img{
+        font-size: initial;
+        width: 40%;
+        display: inline-block;
+        height: 250px;
+        margin-bottom: 50px;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #707070;
+        box-shadow: 0px 0px 3px rgba(112,112,112, .7);
+        border-radius: 5px;
+    }
+    .project_box_title{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        height: 24px;
+        font-size: 24px;
+        padding: 10px 5px;
+        line-height: 24px;
+        transition:  all .3s;
+        border-top: 1px solid #707070;
+        color: black;
+        background: rgba(255, 255, 255, .7);
+    }
+    .project_box_img:hover .project_box_title{
+        bottom: 100px;
+    }
+    .project_box_img:hover .project_box_message{
+        bottom: 0px;
+    }
+    .project_box_message{
+        position: absolute;
+        bottom: -100px;
+        width: 100%;
+        height: 100px;
+        transition: all .3s;
+        padding:  10px 5px;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, .7);
+        color: black;
+    }
+    #content_me{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #707070;
+        flex-direction: column;
+        padding-top:150px;
+    }
+    #content_me_link{
+       justify-content: space-around; 
+       width: 400px;
+       display: flex;
+       padding-top: 120px;
+       font-size: 80px;
+    }
+
+    #content_me_link a{
+        color:lightgray;
+        transition:  all .5s;
+    }
+    #content_me_link a:link{
+        text-decoration: none;
+    }
+
+    #content_me_link a:hover{
+        color: white;
+    }
+
+    #content_me_btn{
+        height: 36px;
+        width: 400px;
+        font-size: 36px;
+        text-align: center;
+        vertical-align: center;
+        padding: 35px 0px;
+        user-select: none;
+        background: #FFB336;
+        color: #F3F7F7;
+        font-weight: 600;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+    }
+    #experience{
+        background: #F3F7F7;
+    }
+    #experience ul{
+        width: 80%;
+        margin: 20px auto;
+        position: relative;
+        font-size: 30px;
+        margin: 70px auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,0%);
+    }
+
+    #experience  ul li::before{
+        content: attr(data-start) "～" attr(data-end) ;
+        display: inline-block;
+        padding-right: 40px;
+        font-size: 14px;
+        width: 130px;
+        line-height: 20px;
+        vertical-align: middle;
+    }
+
+    #experience ul .line{
+        display: inline-block;
+        content: "";
+        width: 1px;
+        background: black;
+        height: 100%;
+        position: absolute;
+        border: 1px solid black;
+        left: -21px;
+        top: 0%;
+        transform: translateX(-40px);
+    }
+
+    #experience ul li{
+        position: relative;
+        padding: 10px 0px;
+    }
+    #experience ul li::after{
+        display: inline-block;
+        position: absolute;
+        content: '';
+        width: 16px;
+        height: 16px;
+        left: -27px;
+        top: 40%;
+        transform: translateX(-40px);
+        /* border: 1px solid black; */
+        border-radius: 50%;
+        background: black;
+    }
+    #experience ul li:last-child:before{
+        content: attr(data-start) "～現在";
+    }
+    #experience ul li:last-child:after{
+        /* background: yellow; */
+        border: 5px double white;
+        background: #FFB336;
+        background-origin: content-box;
+        left: -32px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #menu{
+            display: none;
+        }
+        #menu_view{
+            display: block;
+            text-align: center;
+            background: #707070;
+            color: #F3F7F7;
+            padding: 20px 0px;
+            font-size: 28px;
+            position: sticky;
+            top: 0px;
+            z-index: 99;
+        }
+        #menu:checked ~ .menu_wrap nav ol{
+            display: flex;
+        }
+        #menu:checked ~ #menu_view{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: 999;
+        }
+        nav{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            right:0px;
+            z-index: 99;
+        }
+        nav ol{
+            flex-direction: column;
+            justify-content: space-around;
+            text-align: center;
+            height: 100vh;
+            padding: 150px 0px;
+            box-sizing: border-box;
+            display: none;
+            font-size: 24px;
+        }
+        .container{
+            padding: 10px 20px;
+        }
+        #me{
+            padding-top: 30px;
+        }
+        .me_img{
+            max-width: 200px;
+            height: auto;
+        }
+        .myName{
+            font-size: 38px;
+        }
+        .skill_box{
+            box-sizing: border-box;
+            width: 100%;
+            text-align: center;
+            /* flex-direction: column; */
+        }
+        .skill_message{
+            text-align: left;
+        }
+        .wrap{
+            display: block;
+        }
+        .project_box_img{
+            width: 100%;
+        }
+        #experience ul{
+            width: 100%;
+            margin: initial;
+            position: static;
+            transform: initial;
+            font-size: 24px;
+        }
+
+        #experience  ul li::before{
+            display: block;
+            width: auto;
+            text-align: center;
+            padding: 30px 0px 10px 0px;
+        }
+
+        #experience ul .line{
+            display: none;
+        }
+
+        #experience ul li{
+            /* position: relative; */
+            text-align: center;
+        }
+        #experience ul li::after{
+            display: none;
+            transform: initial;
+        }
+
+
+        .project_box_img .project_box_title{
+            bottom: 100px;
+        }
+        .project_box_img .project_box_message{
+            bottom: 0px;
+        }
+
+        #content_me_link{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+            font-size: 80px;
+        }
+
+        #content_me_link a{
+            padding: 20px 0px;
+
+        }
+    }
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="menu">
+    <label for="menu" id="menu_view">Menu</label>
+    <label for="menu" class="menu_wrap">
+        <nav>
+            <ol>
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+                <li>
+                    <a href="#skill">SKill</a>
+                </li>
+                <li>
+                    <a href="#project">Project</a>
+                </li>
+                <li>
+                    <a href="#content_me">Content Me</a>
+                </li>
+            </ol>
+        </nav>
+    </label>
+    <div id="me" class="container">
+        <div class="myName">
+            <img src="./img/me.png" class="me_img"><br><br>
+            Huang Ze-Yi
+        </div>
+    </div>
+    <div id="experience" class="container">
+            <h2>Experience</h2>
+            <ul>
+                <div class="line"></div>
+                <li data-start="2008/09" data-end="2012/06">朝陽科技大學</li>
+                <li data-start="2012/06" data-end="2012/09">資拓宏宇 裝機工程師(短期)</li>
+                <li data-start="2012/09" data-end="2014/06">國立虎尾科技大學</li>
+                <li data-start="2014/09" data-end="2015/08">服兵役...</li>
+                <li data-start="2015/11" data-end="2018/08">國泰綜合醫院 程式工程師</li>
+                <li data-start="2018/04">全音樂股份有限公司 程式工程師</li>
+            </ul>
+    </div>
+    <div id="skill" class="container">
+            <h2>Skill</h2>
+            <div class="wrap">
+                <div class="skill_box">
+                    <div class="skill_img" 
+                         style="background:  0px 5px /contain no-repeat  url('./img/html.png'),#E44D26"
+                    >
+                        <div class="skill_title">
+                            HTML
+                        </div>
+                    </div>
+                    <div class="skill_message">
+                        了解常用的HTML元素。
+                    </div>
+                </div>
+                <div class="skill_box">
+                    <div class="skill_img" 
+                         style="background:  7px 5px /contain  no-repeat  url('./img/css.png'),#0071BC"
+                    >
+                        <div class="skill_title">
+                            CSS
+                        </div>
+                    </div>
+                    <div class="skill_message">
+                        了解基本常用的CSS，正在持續學習使用CSS3和SASS。
+                    </div>
+                </div>
+                <div class="skill_box">
+                    <div class="skill_img"  
+                        style="background:  center 5px /contain no-repeat  url('./img/js.png'),#E7A42B"
+                    >               
+                        <div class="skill_title">
+                            JavaScript
+                        </div>
+                    </div>
+                    <div class="skill_message">
+                        除了平常網頁使用jQuery，有對JavaScript一些程式語言特性做了解(閉包、物件導向)，近幾年來在學習ECMAScript。
+                    </div>
+                </div>
+                <div class="skill_box">
+                    <div class="skill_img" style="background:  0px 0px /cover  url('./img/php.png'),#37B0D9">
+                        <div class="skill_title">
+                            PHP
+                        </div>
+                    </div>
+                    <div class="skill_message">
+                        大學自學的程式語言，有PDO資料庫操作都有時做過，正在學習一些近年來PHP獨有特性。
+                    </div>
+                </div>
+                <div class="skill_box">
+                    <div class="skill_img"  style="background:  0px 0px /cover  url('./img/java.svg')">
+                        <div class="skill_title">
+                            Java(JSP)
+                        </div>
+                    </div>
+                    <div class="skill_message">
+                        大學學習的程式語言，了解Java物件導向特性。
+                    </div>
+                </div>
+                <div class="skill_box">
+                    <div class="skill_img"  style="background:  0px 0px /cover  url('./img/docker.png')">
+                        <div class="skill_title">
+                            Docker
+                        </div>
+                    </div>
+                    <div class="skill_message">
+                        基本運行container指令都會，學習Docker是希望以後開發過程上可以更迅速。
+                    </div>
+                </div>
+                <div class="skill_box">
+                    <div class="skill_img"  style="background:  0px 0px /cover  url('./img/sql.svg')">
+                        <div class="skill_title">
+                            SQL
+                        </div>
+                    </div>
+                    <div class="skill_message">
+                        熟悉基本SQL查詢、子查詢、關聯查詢、統計函數。
+                    </div>
+                </div>
+                <div class="skill_box" style="border:none;box-shadow:none;background:none;">
+
+                </div>
+                <!--
+                目前發現使用flex遇到單數時候，最後一行顯示致中....
+                下次這種項目考慮用grid來做，可能比較不會出問題
+                暫時用一個元素，來完成排版
+                -->
+            </div>
+        </div>
+    <div id="project" class="container">
+            <h2>Project</h2>
+            <div class="wrap">
+                <div class="project_box_img" 
+                    style="background: 0px 0px/cover url('./img/project1.png')"
+                >
+                    <div class="project_box_title">實驗室差勤系統(大學專題)</div>
+                    <div class="project_box_message">我負責請假系統和簽到系統，大學自學JQuery，專題運用在動態表單上，讓表單更加生動。</div>
+                </div>
+                <div class="project_box_img"
+                    style="background: 0px 0px/cover url('./img/project2.png')"
+                >
+                    <div class="project_box_title">簡單排名系統</div>
+                    <div class="project_box_message">因為跟同學討論名次，為了我們更方便輸入，我做一個前端拖拉排名小功能，可以分享網址方便大家交流。<br>
+                        <a href="https://codepen.io/malagege/pen/OmyZOj" target="_blank">Demo網址</a>
+                    </div>
+                </div>
+                <div class="project_box_img" 
+                   style="background: 0px 0px/cover url('./img/project3.png')"
+                >
+                    <div class="project_box_title">我的動畫清單</div>
+                    <div class="project_box_message">討論版常常看到每季新番清單圖示，運用html5Canvas和jQuery做一個產生圖片清單功能。<br>
+                    <a href="http://malagege.github.io/generator-myanimelist/" target="_blank">Demo網址</a></div>
+                </div>
+                <div class="project_box_img"
+                    style="background: 0px 0px/cover url('./img/project4.png')"
+                >
+                    <div class="project_box_title">線上猜拳</div>
+                    <div class="project_box_message">Firebase實驗，簡單運用線上即時互動。</div>                
+                </div>
+                <div class="project_box_img"
+                    style="background: 0px 0px/cover url('./img/project5.png')"
+                >
+                    <div class="project_box_title">線上即時投票系統</div>
+                    <div class="project_box_message">這次使用PHP實作，搭配前端和後端結合，前端使用jQuery，後端使用Laravel，實作動態及時討論效果。</div>                
+                </div>
+                <div class="project_box_img"
+                    style="background: 0px 0px/cover url('https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png')"
+                >
+                    <div class="project_box_title">快速用sql產生csv/xlsx報表</div>
+                    <div class="project_box_message">使用Go語言實作，在語言執行優勢下，可快速產生報表檔案出來。<br>
+                        <a href="https://github.com/malagege/sqlMakecsv" target="_blank">Demo網址</a>
+                    </div>
+                </div>
+                <div class="project_box_img"
+                    style="background: 0px 0px/cover url('./img/project6.gif')"
+                >
+                    <div class="project_box_title">蕃茄鐘</div>
+                    <div class="project_box_message">這個番茄鐘是簡單計時器提醒功能，並且有搭載自動化計時功能。使用Nodejs和Electron，初次搭配使用vue-cli 3測試實作，寫順便玩玩內建Notification如何做通知。
+                        <a href="https://github.com/malagege/sqlMakecsv" target="_blank">Demo網址</a>
+                    </div>
+                </div>
+                <div class="project_box_img" style="visibility: hidden;"></div>
+            </div>
+    </div>
+    <div id="content_me" class="container">
+            <div id="content_me_btn" data-me="czk3MTQwMjBAZ21haWwuY29t">
+                <i class="fas fa-envelope"></i>
+                聯絡我
+            </div>
+            <div id="content_me_link">
+                <a target="_blank" href="https://github.com/malagege" class="fab fa-github-square"></a>
+                <a target="_blank" href="https://malagege.github.io/blog/" class="fab fa-blogger"></a>
+            </div>
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById('content_me_btn').addEventListener('click',function(){
+        var text = document.getElementById('content_me_btn').dataset.me;
+        location.href = "mailto:" + atob(text);
+    });
+    document.querySelectorAll('nav a').forEach(function(obj){
+        obj.addEventListener('click',function(){
+            document.getElementById('menu').checked = false;
+        });
+    });
+</script>

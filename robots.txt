@@ -15,6 +15,7 @@ Disallow: /
 
 # 移除 blog 頁面
 Disallow: /blog/posts/*
+Disallow: /blog/page/*
 Disallow: /blog/tags/*
 Disallow: /blog/categories/*
 

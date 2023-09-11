@@ -13,6 +13,11 @@ Disallow: /
 User-agent: BLEXBot
 Disallow: /
 
+# 移除 blog 頁面
+Disallow: /blog/posts/*
+Disallow: /blog/tags/*
+Disallow: /blog/categories/*
+
 # Block SISTRIX
 User-agent: SISTRIX Crawler
 Disallow: /
